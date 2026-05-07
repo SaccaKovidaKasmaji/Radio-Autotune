@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radio Auto-Tune</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Radio Auto-Tune</h1>
+      <p class="subtitle">Sistem pindah frekuensi otomatis berbasis lokasi</p>
+      <span id="status-badge" class="badge badge-checking">Menghubungi API...</span>
+      <button id="btn-scrape" onclick="jalankanScraping()" style="margin-top:10px; padding:8px 16px; background:#4CAF50; color:white; border:none; border-radius:6px; cursor:pointer; font-size:14px;">
+        🔄 Update Data Stasiun
+      </button>
+      <span id="scrape-status" style="margin-left:10px; font-size:13px; color:#666;"></span>
+    </header>
+
+    <div id="notif-area"></div>
+
+    <div style="margin: 10px 0; padding: 10px; background: #f5f5f5; border-radius: 8px;">
+      <p id="now-playing" style="margin:0 0 8px 0; font-size:14px; color:#444;">Pilih stasiun untuk mulai streaming</p>
+      <audio id="audio-player" controls style="width:100%">
+        <source src="" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <section class="filter-section">
+      <div class="select-group">
+        <label>Provinsi</label>
+        <select id="sel-provinsi" onchange="muatKota()">
+          <option value="">-- Pilih Provinsi --</option>
+        </select>
+      </div>
+      <div class="select-group">
+        <label>Kota</label>
+        <select id="sel-kota" onchange="muatStasiun()">
+          <option value="">-- Semua Kota --</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="stat-section" class="stat-row" style="display:none">
+      <div class="stat-card">
+        <span class="stat-label">Total stasiun</span>
+        <span class="stat-val" id="stat-total">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Frekuensi terendah</span>
+        <span class="stat-val" id="stat-min">-</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Frekuensi tertinggi</span>
+        <span class="stat-val" id="stat-max">-</span>
+      </div>
+    </section>
+
+    <section id="stasiun-section">
+      <p id="placeholder" class="placeholder-text">Pilih provinsi untuk melihat daftar stasiun</p>
+      <div id="stasiun-grid" class="stasiun-grid"></div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

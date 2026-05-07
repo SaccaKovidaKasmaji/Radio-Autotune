@@ -1,0 +1,32 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; background: #f5f5f0; color: #1a1a1a; min-height: 100vh; }
+.container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+header { margin-bottom: 2rem; }
+header h1 { font-size: 1.8rem; font-weight: 600; }
+header .subtitle { color: #666; margin-top: 4px; font-size: 0.95rem; }
+.badge { display: inline-block; margin-top: 10px; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+.badge-online  { background: #d1fae5; color: #065f46; }
+.badge-offline { background: #fee2e2; color: #991b1b; }
+.badge-checking{ background: #fef3c7; color: #92400e; }
+.notif { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; }
+.notif-success { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+.notif-error   { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+.filter-section { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.select-group { display: flex; flex-direction: column; gap: 4px; min-width: 200px; flex: 1; }
+.select-group label { font-size: 12px; font-weight: 500; color: #555; }
+select { padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; background: white; cursor: pointer; }
+.stat-row { display: flex; gap: 12px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 140px; background: white; border-radius: 10px; padding: 1rem; border: 1px solid #eee; }
+.stat-label { display: block; font-size: 12px; color: #888; margin-bottom: 4px; }
+.stat-val { display: block; font-size: 1.4rem; font-weight: 600; }
+.stasiun-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.stasiun-card { background: white; border-radius: 10px; padding: 1rem; border: 1px solid #eee; cursor: pointer; transition: transform 0.1s, border-color 0.1s; }
+.stasiun-card:hover { transform: translateY(-2px); border-color: #4f46e5; }
+.stasiun-card.aktif { border-color: #4f46e5; border-width: 2px; background: #eef2ff; }
+.stasiun-card .freq { font-size: 1.5rem; font-weight: 700; color: #4f46e5; }
+.stasiun-card .unit { font-size: 0.8rem; color: #888; }
+.stasiun-card .nama { font-size: 14px; font-weight: 500; margin-top: 4px; }
+.stasiun-card .kota { font-size: 12px; color: #888; margin-top: 2px; }
+.stasiun-card .pilih-btn { margin-top: 8px; font-size: 12px; color: #4f46e5; font-weight: 500; }
+.stasiun-card:hover .pilih-btn { text-decoration: underline; }
+.placeholder-text { color: #aaa; text-align: center; padding: 3rem 0; font-size: 14px; }
