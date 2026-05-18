@@ -1,0 +1,24 @@
+# Binary files
+hardware/*.exe
+hardware/*.dll
+hardware/pthreadVC2.dll
+
+# Sensitive files
+hardware/serviceAccountKey.json
+backend/serviceAccountKey.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Database
+*.db
+*.sqlite
+
+# Environment
+.env
+venv/
+
+# Logs
+*.log
