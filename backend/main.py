@@ -91,6 +91,12 @@ def trigger_scrape(bg: BackgroundTasks):
     bg.add_task(jalankan_scraping)
     return {"pesan": "Scraping dimulai"}
 
+@app.get("/api/stream-url")
+def get_stream_url():
+    url = os.environ.get("STREAM_URL", "")
+    return {"url": url}
+
 frontend_path = os.path.join(os.path.dirname(__file__), "frontend")
 if os.path.exists(frontend_path):
     app.mount("/", StaticFiles(directory=frontend_path, html=True), name="frontend")
+

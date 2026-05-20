@@ -109,10 +109,12 @@ async function pilihStasiun(stasiun) {
         `Radio sedang pindah ke ${stasiun.nama_stasiun} — ${stasiun.frekuensi_mhz.toFixed(1)} MHz`,
         "success"
       );
+      const streamRes = await fetch(`${API_BASE}/api/stream-url`);
+      const streamJson = await streamRes.json();
       const player = document.getElementById("audio-player");
       const label = document.getElementById("now-playing");
-      if (player) {
-        player.src = "https://notes-ward-boots-frank.trycloudflare.com/stream";
+      if (player && streamJson.url) {
+        player.src = streamJson.url + "/stream";
         player.load();
         player.play();
         label.textContent = `🎵 Sedang memutar: ${stasiun.nama_stasiun} ${stasiun.frekuensi_mhz.toFixed(1)} MHz`;
