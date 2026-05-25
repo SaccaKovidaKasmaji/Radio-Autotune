@@ -1,25 +1,3 @@
-Masalahnya file `ffmpeg71.exe` (130MB) dan `ffplay.exe` (98MB) terlalu besar untuk GitHub. Tambahkan ke `.gitignore` dulu:
-
-```cmd
-cd "C:\Users\acer\AppData\Local\Google\Cloud SDK\radio-autotune"
-echo hardware/ffmpeg71.exe >> .gitignore
-echo hardware/ffmpeg.exe >> .gitignore
-echo hardware/ffplay.exe >> .gitignore
-echo hardware/rtl_fm.exe >> .gitignore
-echo hardware/serviceAccountKey.json >> .gitignore
-echo hardware/*.dll >> .gitignore
-git rm --cached hardware/ffmpeg71.exe hardware/ffplay.exe hardware/rtl_fm.exe
-git add .gitignore
-git commit -m "remove large binary files"
-git push origin master
-```
-
----
-
-Untuk README, ini rangkuman requirements:
-
----
-
 ## Requirements & Setup
 
 ### Cloud (sudah di-deploy, tidak perlu setup ulang)
