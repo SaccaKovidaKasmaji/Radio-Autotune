@@ -19,16 +19,57 @@ TARGETS = {
 }
 
 DATA_MANUAL = [
-    {"nama_stasiun": "Ardan FM",     "frekuensi_mhz": 105.9, "kota": "Kota Bandung",    "provinsi": "Jawa Barat"},
-    {"nama_stasiun": "OZ Radio",     "frekuensi_mhz": 103.1, "kota": "Kota Bandung",    "provinsi": "Jawa Barat"},
-    {"nama_stasiun": "Prambors FM",  "frekuensi_mhz": 98.4,  "kota": "Jakarta Selatan", "provinsi": "DKI Jakarta"},
-    {"nama_stasiun": "Hard Rock FM", "frekuensi_mhz": 87.6,  "kota": "Jakarta Selatan", "provinsi": "DKI Jakarta"},
-    {"nama_stasiun": "Geronimo FM",  "frekuensi_mhz": 106.1, "kota": "Kota Yogyakarta", "provinsi": "DI Yogyakarta"},
-    {"nama_stasiun": "CBS FM",       "frekuensi_mhz": 95.9,  "kota": "Jakarta Selatan", "provinsi": "DKI Jakarta"},
-    {"nama_stasiun": "Elshinta",     "frekuensi_mhz": 90.0,  "kota": "Jakarta Barat",   "provinsi": "DKI Jakarta"},
-    {"nama_stasiun": "Gen FM",       "frekuensi_mhz": 98.7,  "kota": "Jakarta Selatan", "provinsi": "DKI Jakarta"},
-    {"nama_stasiun": "RRI Pro 2",    "frekuensi_mhz": 105.1, "kota": "Kota Bandung",    "provinsi": "Jawa Barat"},
-    {"nama_stasiun": "Paramuda FM",  "frekuensi_mhz": 100.2, "kota": "Kota Surabaya",   "provinsi": "Jawa Timur"},
+    # Kota Bandung
+    {"nama_stasiun": "Ardan FM",           "frekuensi_mhz": 105.9, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "OZ Radio",           "frekuensi_mhz": 103.1, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "RRI Pro 1",          "frekuensi_mhz": 91.4,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "RRI Pro 2",          "frekuensi_mhz": 105.1, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "RRI Pro 3",          "frekuensi_mhz": 95.3,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "RRI Pro 4",          "frekuensi_mhz": 97.6,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Elshinta Bandung",   "frekuensi_mhz": 100.9, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Pass FM",            "frekuensi_mhz": 102.2, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Rama FM",            "frekuensi_mhz": 98.7,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "KLCBS FM",           "frekuensi_mhz": 100.4, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Dahlia FM",          "frekuensi_mhz": 101.5, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Motion Radio",       "frekuensi_mhz": 97.5,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Cosmo FM",           "frekuensi_mhz": 101.9, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Female Radio",       "frekuensi_mhz": 99.5,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Prambors Bandung",   "frekuensi_mhz": 98.4,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "I-Radio Bandung",    "frekuensi_mhz": 89.6,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Hard Rock FM Bandung","frekuensi_mhz": 87.6, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Imelda FM",          "frekuensi_mhz": 88.5,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Gapura FM",          "frekuensi_mhz": 107.7, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "MQ FM",              "frekuensi_mhz": 102.7, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "RKPD FM",            "frekuensi_mhz": 96.0,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Fajri FM",           "frekuensi_mhz": 91.7,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Mustang FM",         "frekuensi_mhz": 88.0,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Trijaya FM Bandung", "frekuensi_mhz": 92.0,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Pop FM Bandung",     "frekuensi_mhz": 90.5,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "SL FM",             "frekuensi_mhz": 93.6,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Bens Radio Bandung", "frekuensi_mhz": 106.2, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+    {"nama_stasiun": "Sonata FM",          "frekuensi_mhz": 94.3,  "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
+
+    # DKI Jakarta
+    {"nama_stasiun": "Prambors FM",    "frekuensi_mhz": 102.2, "kota": "Jakarta Selatan", "provinsi": "DKI Jakarta"},
+    {"nama_stasiun": "Hard Rock FM",   "frekuensi_mhz": 87.6,  "kota": "Jakarta Selatan", "provinsi": "DKI Jakarta"},
+    {"nama_stasiun": "CBS FM",         "frekuensi_mhz": 95.9,  "kota": "Jakarta Selatan", "provinsi": "DKI Jakarta"},
+    {"nama_stasiun": "Elshinta",       "frekuensi_mhz": 90.0,  "kota": "Jakarta Barat",   "provinsi": "DKI Jakarta"},
+    {"nama_stasiun": "Gen FM",         "frekuensi_mhz": 98.7,  "kota": "Jakarta Selatan", "provinsi": "DKI Jakarta"},
+    {"nama_stasiun": "Trijaya FM",     "frekuensi_mhz": 104.6, "kota": "Jakarta Pusat",   "provinsi": "DKI Jakarta"},
+    {"nama_stasiun": "Delta FM",       "frekuensi_mhz": 99.1,  "kota": "Jakarta Selatan", "provinsi": "DKI Jakarta"},
+    {"nama_stasiun": "Motion FM",      "frekuensi_mhz": 97.5,  "kota": "Jakarta Selatan", "provinsi": "DKI Jakarta"},
+    {"nama_stasiun": "I-Radio Jakarta","frekuensi_mhz": 89.6,  "kota": "Jakarta Pusat",   "provinsi": "DKI Jakarta"},
+    {"nama_stasiun": "RRI Pro 3 Jakarta","frekuensi_mhz": 91.2,"kota": "Jakarta Pusat",   "provinsi": "DKI Jakarta"},
+
+    # DI Yogyakarta
+    {"nama_stasiun": "Geronimo FM",    "frekuensi_mhz": 106.1, "kota": "Kota Yogyakarta", "provinsi": "DI Yogyakarta"},
+    {"nama_stasiun": "Prambors Yogya", "frekuensi_mhz": 95.8,  "kota": "Kota Yogyakarta", "provinsi": "DI Yogyakarta"},
+    {"nama_stasiun": "RRI Pro 2 Yogya","frekuensi_mhz": 91.1,  "kota": "Kota Yogyakarta", "provinsi": "DI Yogyakarta"},
+
+    # Jawa Timur
+    {"nama_stasiun": "Paramuda FM",    "frekuensi_mhz": 100.2, "kota": "Kota Surabaya",   "provinsi": "Jawa Timur"},
+    {"nama_stasiun": "Prambors Surabaya","frekuensi_mhz": 89.3,"kota": "Kota Surabaya",   "provinsi": "Jawa Timur"},
+    {"nama_stasiun": "Hard Rock Surabaya","frekuensi_mhz": 91.3,"kota": "Kota Surabaya",  "provinsi": "Jawa Timur"},
 ]
 
 def bersihkan_frekuensi(teks):

@@ -1,6 +1,6 @@
 const API_BASE = "";
-
 let stasiunAktif = null;
+let sdrKota = null;
 
 async function cekStatus() {
   try {
@@ -12,6 +12,18 @@ async function cekStatus() {
   } catch {
     document.getElementById("status-badge").className = "badge badge-offline";
     document.getElementById("status-badge").textContent = "API Offline";
+  }
+}
+
+async function muatSdrInfo() {
+  try {
+    const res = await fetch(`${API_BASE}/api/sdr-info`);
+    const json = await res.json();
+    sdrKota = json.kota;
+    const el = document.getElementById("sdr-lokasi");
+    if (el) el.textContent = `📡 SDR aktif di: ${json.kota}, ${json.provinsi}`;
+  } catch (e) {
+    console.error("Gagal muat SDR info:", e);
   }
 }
 
@@ -81,7 +93,8 @@ function tampilkanStasiun(data) {
   ph.style.display = "none";
   data.forEach(s => {
     const card = document.createElement("div");
-    card.className = "stasiun-card";
+    const bisaPlay = !sdrKota || s.kota === sdrKota;
+    card.className = "stasiun-card" + (!bisaPlay ? " disabled" : "");
     if (stasiunAktif && stasiunAktif.nama_stasiun === s.nama_stasiun) {
       card.classList.add("aktif");
     }
@@ -89,9 +102,9 @@ function tampilkanStasiun(data) {
       <div class="freq">${s.frekuensi_mhz.toFixed(1)}<span class="unit"> MHz</span></div>
       <div class="nama">${s.nama_stasiun}</div>
       <div class="kota">${s.kota}</div>
-      <div class="pilih-btn">Klik untuk pilih</div>
+      <div class="pilih-btn">${bisaPlay ? "Klik untuk pilih" : "📍 SDR tidak di area ini"}</div>
     `;
-    card.onclick = () => pilihStasiun(s);
+    if (bisaPlay) card.onclick = () => pilihStasiun(s);
     grid.appendChild(card);
   });
 }
@@ -167,3 +180,4 @@ async function jalankanScraping() {
 
 cekStatus();
 muatProvinsi();
+muatSdrInfo();

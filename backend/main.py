@@ -33,6 +33,7 @@ class FrekuensiOut(BaseModel):
     nama_stasiun: str
     frekuensi_mhz: float
     kota: str
+
 @app.on_event("startup")
 async def startup():
     global fdb
@@ -45,6 +46,17 @@ async def startup():
 
 @app.get("/api/status")
 def status(): return {"status": "online"}
+
+@app.get("/api/sdr-info")
+def get_sdr_info():
+    kota = os.environ.get("SDR_KOTA", "Kota Bandung")
+    provinsi = os.environ.get("SDR_PROVINSI", "Jawa Barat")
+    return {"kota": kota, "provinsi": provinsi}
+
+@app.get("/api/stream-url")
+def get_stream_url():
+    url = os.environ.get("STREAM_URL", "")
+    return {"url": url}
 
 @app.get("/api/provinsi")
 def get_provinsi(db: Session=Depends(get_db)):
@@ -91,12 +103,6 @@ def trigger_scrape(bg: BackgroundTasks):
     bg.add_task(jalankan_scraping)
     return {"pesan": "Scraping dimulai"}
 
-@app.get("/api/stream-url")
-def get_stream_url():
-    url = os.environ.get("STREAM_URL", "")
-    return {"url": url}
-
 frontend_path = os.path.join(os.path.dirname(__file__), "frontend")
 if os.path.exists(frontend_path):
     app.mount("/", StaticFiles(directory=frontend_path, html=True), name="frontend")
-

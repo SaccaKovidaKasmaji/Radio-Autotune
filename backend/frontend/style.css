@@ -8,6 +8,7 @@ header .subtitle { color: #666; margin-top: 4px; font-size: 0.95rem; }
 .badge-online  { background: #d1fae5; color: #065f46; }
 .badge-offline { background: #fee2e2; color: #991b1b; }
 .badge-checking{ background: #fef3c7; color: #92400e; }
+.sdr-info { margin-top: 8px; font-size: 13px; color: #4f46e5; font-weight: 500; }
 .notif { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; }
 .notif-success { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
 .notif-error   { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
@@ -23,10 +24,14 @@ select { padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; font-siz
 .stasiun-card { background: white; border-radius: 10px; padding: 1rem; border: 1px solid #eee; cursor: pointer; transition: transform 0.1s, border-color 0.1s; }
 .stasiun-card:hover { transform: translateY(-2px); border-color: #4f46e5; }
 .stasiun-card.aktif { border-color: #4f46e5; border-width: 2px; background: #eef2ff; }
+.stasiun-card.disabled { opacity: 0.4; cursor: not-allowed; }
+.stasiun-card.disabled:hover { transform: none; border-color: #eee; }
 .stasiun-card .freq { font-size: 1.5rem; font-weight: 700; color: #4f46e5; }
 .stasiun-card .unit { font-size: 0.8rem; color: #888; }
 .stasiun-card .nama { font-size: 14px; font-weight: 500; margin-top: 4px; }
 .stasiun-card .kota { font-size: 12px; color: #888; margin-top: 2px; }
 .stasiun-card .pilih-btn { margin-top: 8px; font-size: 12px; color: #4f46e5; font-weight: 500; }
+.stasiun-card.disabled .pilih-btn { color: #aaa; }
 .stasiun-card:hover .pilih-btn { text-decoration: underline; }
+.stasiun-card.disabled:hover .pilih-btn { text-decoration: none; }
 .placeholder-text { color: #aaa; text-align: center; padding: 3rem 0; font-size: 14px; }
