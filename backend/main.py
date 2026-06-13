@@ -36,13 +36,7 @@ class FrekuensiOut(BaseModel):
 
 @app.on_event("startup")
 async def startup():
-    global fdb
     init_db()
-    if not firebase_admin._apps:
-        cred_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "/app/secrets/serviceAccountKey.json")
-        cred = credentials.Certificate(cred_path)
-        firebase_admin.initialize_app(cred)
-    fdb = fs.client()
 
 @app.get("/api/status")
 def status(): return {"status": "online"}
@@ -87,8 +81,16 @@ def get_frekuensi(provinsi: str, kota: Optional[str]=Query(None), db: Session=De
 
 @app.post("/api/pilih")
 def pilih_stasiun(body: PilihStasiun):
-    fdb.collection("settings").document("current_settings").set(body.dict())
-    return {"pesan": "Diterima", "data": body}
+    try:
+        if not firebase_admin._apps:
+            cred_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "/tmp/serviceAccountKey.json")
+            cred = credentials.Certificate(cred_path)
+            firebase_admin.initialize_app(cred)
+        db = fs.client()
+        db.collection("settings").document("current_settings").set(body.dict())
+        return {"pesan": "Diterima", "data": body}
+    except Exception as e:
+        raise HTTPException(500, f"Gagal push Firebase: {str(e)}")
 
 @app.post("/api/stasiun", status_code=201)
 def tambah_stasiun(body: StasiunInput, db: Session=Depends(get_db)):
@@ -103,6 +105,18 @@ def trigger_scrape(bg: BackgroundTasks):
     bg.add_task(jalankan_scraping)
     return {"pesan": "Scraping dimulai"}
 
-frontend_path = os.path.join(os.path.dirname(__file__), "frontend")
+# frontend_path = os.path.join(os.path.dirname(__file__), "frontend")
+frontend_path = "/app/frontend"
 if os.path.exists(frontend_path):
     app.mount("/", StaticFiles(directory=frontend_path, html=True), name="frontend")
+
+"""
+import os
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/api/status")
+def status():
+    return {"status": "online"}
+"""

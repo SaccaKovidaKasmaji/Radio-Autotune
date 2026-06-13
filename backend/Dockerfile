@@ -14,6 +14,6 @@ COPY firebase_client.py .
 COPY frontend ./frontend
 
 RUN ls -la /app
-
+RUN python -c "import main; print('Import OK')"
 EXPOSE 8080
-CMD ["sh", "-c", "cd /app && uvicorn main:app --host 0.0.0.0 --port ${PORT:-8080}"]
+CMD ["sh", "-c", "PYTHONPATH=/app python -m uvicorn main:app --host 0.0.0.0 --port 8080"]
