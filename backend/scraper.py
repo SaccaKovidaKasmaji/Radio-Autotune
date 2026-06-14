@@ -17,7 +17,7 @@ TARGETS = {
     "Banten":        "https://id.wikipedia.org/wiki/Daftar_stasiun_radio_di_Banten",
     "Bali":          "https://id.wikipedia.org/wiki/Daftar_stasiun_radio_di_Bali",
 }
-
+#Data manual tambahan dari scrapping
 DATA_MANUAL = [
     # Kota Bandung
     {"nama_stasiun": "Ardan FM",           "frekuensi_mhz": 105.9, "kota": "Kota Bandung", "provinsi": "Jawa Barat"},
