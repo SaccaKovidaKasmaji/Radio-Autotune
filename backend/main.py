@@ -78,7 +78,7 @@ def get_frekuensi(provinsi: str, kota: Optional[str]=Query(None), db: Session=De
     data = q.all()
     if not data: raise HTTPException(404, f"Tidak ada data untuk {provinsi}")
     return [FrekuensiOut(nama_stasiun=s.nama_stasiun, frekuensi_mhz=s.frekuensi_mhz, kota=s.kota) for s in data]
-
+#memeilih stasiun 
 @app.post("/api/pilih")
 def pilih_stasiun(body: PilihStasiun):
     try:
